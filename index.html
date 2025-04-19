@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Musician Metaphysics</title>
+  <link rel="icon" href="https://bafybeigneeeg3khe6ubpion7mwfvfovq5kvpl7eq4cevpigzrtzudi4iu4.ipfs.dweb.link?filename=favicon.png" type="image/png">
+  <style>
+    :root {
+      --purple: #7b3fa1;
+      --yellow: #f5c242;
+      --mint: #3eb489;
+    }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple), var(--mint));
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .site-header {
+      background: var(--purple);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-logo {
+      height: 60px;
+    }
+    .site-nav .nav-link {
+      color: #fff;
+      background: var(--yellow);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    .site-nav .nav-link:hover {
+      transform: scale(1.05);
+    }
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+    }
+    .episodes h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .episode-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .episode-list li {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border: 2px solid var(--yellow);
+      border-radius: 10px;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+    .episode-list li:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .episode-list a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .site-footer {
+      background: var(--purple);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .site-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .header-logo {
+        height: 50px;
+      }
+      .site-nav .nav-link {
+        font-size: 0.9rem;
+      }
+      .episode-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <img src="https://bafybeibcs6mlhylyk7jp6f6ooh5a65izu3mitglfhqvmaaqdtgrqgektdq.ipfs.dweb.link?filename=headerlogo.gif" alt="Musician Metaphysics Logo" class="header-logo">
+    <nav class="site-nav">
+      <a href="https://open.spotify.com/show/415888vD1Ubrslb6HoiLE0" target="_blank" class="nav-link">Older Episodes</a>
+    </nav>
+  </header>
+  <main class="main-content">
+    <section class="episodes">
+      <h1>New Episodes Coming Soon</h1>
+      <ul id="episode-list" class="episode-list"></ul>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>&copy; 2025 Musician Metaphysics</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const episodes = [
+        // Add episodes here in the format:
+        // { title: 'Episode 12: Music and Geopolitics', url: 'https://open.spotify.com/episode/XYZ' },
+      ];
+      const list = document.getElementById('episode-list');
+      if (episodes.length === 0) {
+        const li = document.createElement('li');
+        li.textContent = 'Stay tuned for upcoming episodes.';
+        list.appendChild(li);
+      } else {
+        episodes.forEach(ep => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = ep.url;
+          a.textContent = ep.title;
+          a.target = '_blank';
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
