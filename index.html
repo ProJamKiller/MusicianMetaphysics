@@ -8,7 +8,6 @@
   <style>
     :root {
       --purple: #7b3fa1;
-      --yellow: #f5c242;
       --mint: #3eb489;
     }
     *, *::before, *::after {
@@ -18,15 +17,15 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      color: #fff;
-      background: linear-gradient(135deg, var(--purple), var(--mint));
+      color: var(--mint);
+      background: linear-gradient(135deg, var(--mint), var(--purple));
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
     .site-header {
-      background: var(--purple);
-      padding: 2rem;
+      background: #000;
+      padding: 2rem 1rem;
       text-align: center;
     }
     .header-logo {
@@ -40,8 +39,8 @@
       margin-top: 0.5rem;
     }
     .site-nav .nav-link {
-      color: #fff;
-      background: var(--yellow);
+      color: var(--mint);
+      background: var(--purple);
       padding: 0.4rem 0.8rem;
       border-radius: 20px;
       text-decoration: none;
@@ -50,7 +49,7 @@
       transition: background 0.2s ease, transform 0.2s ease;
     }
     .site-nav .nav-link:hover {
-      background: #e1b930;
+      background: #6a3082;
       transform: scale(1.05);
     }
     .main-content {
@@ -69,37 +68,27 @@
       gap: 1rem;
     }
     .episode-list li {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.1);
       padding: 1rem;
-      border: 2px solid var(--yellow);
+      border: 2px solid var(--mint);
       border-radius: 10px;
       text-align: center;
       transition: background 0.3s ease;
     }
     .episode-list li:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.2);
     }
     .episode-list a {
-      color: #fff;
+      color: var(--mint);
       text-decoration: none;
       font-weight: bold;
       font-size: 0.95rem;
     }
     .site-footer {
-      background: var(--purple);
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .footer-logo {
-      width: 100%;
-      height: auto;
-      max-height: 100px;
-      object-fit: contain;
-      margin-top: 0.5rem;
+      background: url('https://bafybeifdnuxqwnpxak5ilo4ttnlr3de5nzcykuje7ehdsw3dwcqvxywbqq.ipfs.dweb.link?filename=footerlogo.jpg') no-repeat center center;
+      background-size: contain;
+      padding: 2rem 1rem;
+      flex-shrink: 0;
     }
     @media (max-width: 600px) {
       .site-header {
@@ -116,10 +105,7 @@
         font-size: 1.6rem;
       }
       .site-footer {
-        padding: 1rem;
-      }
-      .footer-logo {
-        max-height: 80px;
+        padding: 1rem 0.5rem;
       }
     }
   </style>
@@ -137,10 +123,7 @@
       <ul id="episode-list" class="episode-list"></ul>
     </section>
   </main>
-  <footer class="site-footer">
-    <p>&copy; 2025 Musician Metaphysics</p>
-    <img src="https://bafybeifdnuxqwnpxak5ilo4ttnlr3de5nzcykuje7ehdsw3dwcqvxywbqq.ipfs.dweb.link?filename=footerlogo.jpg" alt="Footer Logo" class="footer-logo">
-  </footer>
+  <footer class="site-footer"></footer>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const episodes = [];
